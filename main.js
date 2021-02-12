@@ -29,15 +29,18 @@ form.onsubmit = function (u){
     for(let i = 0; i < files.length; i++) {
       let file = files[i]
 
-      formData.append('files[]', file)
+      formData.append('login' , 'String')
+      formData.append('file' , file, 'binary')
     }
 
     fetch(url,{
       method: 'POST',
       body: formData,
-    }).then((response) =>{
-      console.log(response)
+    }).then(response => response.json())
+    .then(data => {
+      console.log(data)
     })
+
 
 }
 
