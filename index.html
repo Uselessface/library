@@ -23,9 +23,9 @@
                     </form>
                 </div>
                 <div class="tab__upload tab" id="upload">
-                    <form action="" method="POST">
-                        <input type="file">
-                        <input type="submit" id="submit">
+                    <form action="" method="POST" id="form_upload" enctype="multipart/form-data">
+                        <input type="file" name="files[]" multiple>
+                        <input type="submit" id="submit" value="Загрузить...">
                     </form>
                 </div>
             </div>

@@ -12,8 +12,34 @@ window.onload = function() {
     };
   });
 }
-
 function _(selector) {
 	const arr = Array.from(document.querySelectorAll(selector));
   return arr.length === 1 ? arr[0] : arr;
 }
+
+const url = 'https://apiinterns.osora.ru/';
+
+const form = _('#form_upload');
+
+form.onsubmit = function (u){
+    u.preventDefault();
+    const files = _('[type=file]').files;
+    const formData = new FormData();
+
+    for(let i = 0; i < files.length; i++) {
+      let file = files[i]
+
+      formData.append('files[]', file)
+    }
+
+    fetch(url,{
+      method: 'POST',
+      body: formData,
+    }).then((response) =>{
+      console.log(response)
+    })
+
+}
+
+
+
