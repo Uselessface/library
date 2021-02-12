@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LIBRARY</title>
+</head>
+<body>
+    <main>
+        <section>
+            <menu>
+                <li><a href="#write" data-toggle="tab">Написать</a></li>
+                <li><a href="#upload" data-toggle="tab">Загрузить</a></li>
+            </menu>
+            <div class="tabs">
+                <div class="tab__write tab" id="write">
+                    <form action="" method="POST">
+                        <label for="bookName">Название</label>
+                        <input type="text" id="bookName">
+                        <textarea name="" id="" cols="30" rows="10">Текст...</textarea>
+                    </form>
+                </div>
+                <div class="tab__upload tab" id="upload">
+                    <form action="" method="POST">
+                        <input type="file">
+                        <input type="submit" id="submit">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
