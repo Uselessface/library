@@ -50,18 +50,19 @@ window.onload = function() {
   const book__name = _('.book__name');
   const book__content = _('.book__content');
 
+  bookName.value = localStorage.getItem('bookName');  
   bookName.oninput = () => {
     localStorage.setItem('bookName' , bookName.value);
     book__name.innerHTML = bookName.value;
   };
-  bookName.innerHTML = localStorage.getItem('bookName');
   book__name.innerHTML = localStorage.getItem('bookName');
 
+  area.value = localStorage.getItem('area');  
   area.oninput = () => {
     localStorage.setItem('area' , area.value);
-    let content = localStorage.getItem('area');
-    book__content.innerHTML = content;
+    book__content.innerHTML = area.value;
   };
+  book__content.innerHTML = localStorage.getItem('area');
   
   
 
