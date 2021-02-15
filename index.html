@@ -10,23 +10,38 @@
 <body>
     <main>
         <section>
-            <menu>
-                <li><a href="#write" data-toggle="tab">Написать</a></li>
-                <li><a href="#upload" data-toggle="tab">Загрузить</a></li>
-            </menu>
-            <div class="tabs">
-                <div class="tab__write tab" id="write">
-                    <form action="" method="POST">
-                        <label for="bookName">Название</label>
-                        <input type="text" id="bookName">
-                        <textarea name="" id="" cols="30" rows="10">Текст...</textarea>
-                    </form>
+            <aside>
+                <menu>
+                    <li><a href="#write" data-toggle="tab">Написать</a></li>
+                    <li><a href="#upload" data-toggle="tab">Загрузить</a></li>
+                </menu>
+                <div class="tabs">
+                    <div class="tab__write tab" id="write">
+                        <form action="" method="POST">
+                            <label for="bookName">Название</label>
+                            <input type="text" id="bookName">
+                            <textarea name="" id="area" cols="30" rows="10" placeholder="Текст..."></textarea>
+                        </form>
+                    </div>
+                    <div class="tab__upload tab" id="upload">
+                        <form action="" method="POST" id="form_upload" enctype="multipart/form-data">
+                            <input type="file" name="files[]" multiple >
+                            <input type="submit" id="submit" value="Загрузить...">
+                        </form>
+                    </div>
                 </div>
-                <div class="tab__upload tab" id="upload">
-                    <form action="" method="POST" id="form_upload" enctype="multipart/form-data">
-                        <input type="file" name="files[]" multiple >
-                        <input type="submit" id="submit" value="Загрузить...">
-                    </form>
+            </aside>    
+            <div class="output-interface">
+                <div class="output-interface__header">
+
+                </div>
+                <div class="output-interface__book book">
+                    <div class="book__name">
+                        <span></span>
+                    </div>
+                    <div class="book__content">
+
+                    </div>
                 </div>
             </div>
         </section>

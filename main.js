@@ -21,7 +21,7 @@ window.onload = function() {
 
   const form = _('#form_upload');
 
-  form.addEventListener('submit', (u) => {
+  form.onsubmit = function(u) {
     u.preventDefault()
 
     const files = document.querySelector('[type=file]').files
@@ -41,7 +41,33 @@ window.onload = function() {
     }).then((response) => {
       console.log(response)
     })
-  })
+
+
+  }
+  
+  const bookName = _('#bookName');
+  const area = _('#area');
+  const book__name = _('.book__name');
+  const book__content = _('.book__content');
+
+  bookName.oninput = () => {
+    localStorage.setItem('bookName' , bookName.value);
+    book__name.innerHTML = bookName.value;
+  };
+  bookName = localStorage.getItem('bookName');
+  book__name.innerHTML = localStorage.getItem('bookName');
+
+  area.oninput = () => {
+    localStorage.setItem('area' , area.value);
+    let content = localStorage.getItem('area');
+    book__content.innerHTML = content;
+  };
+  
+  
+
+  
+
+
 }
 
 
