@@ -41,7 +41,6 @@ window.onload = function() {
     }).then((response) => {
       console.log(response)
     })
-    console.log(formData.getAll)
   })
 }
 
