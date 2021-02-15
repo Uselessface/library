@@ -385,6 +385,10 @@ section{
 form{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+}
+.tabs{
+    align-self: center;
 }
 .tab {
     display: none;
@@ -405,6 +409,7 @@ aside{
     flex: 0 1 50%;
     padding-left: 50px;
     border-left: 4px solid dimgray;
-    min-height: 600px;
+    min-height: 200px;
+    justify-content: space-around;
 }  
   

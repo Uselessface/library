@@ -17,10 +17,11 @@
                 </menu>
                 <div class="tabs">
                     <div class="tab__write tab" id="write">
-                        <form action="" method="">
+                        <form action="" method="" id="write-form">
                             <label for="bookName">Название</label>
-                            <input type="text" id="bookName">
-                            <textarea name="" id="area" cols="30" rows="10" placeholder="Текст..."></textarea>
+                            <input type="text" id="title">
+                            <textarea name="" id="content" cols="30" rows="10" placeholder="Текст..."></textarea>
+                            <input type="submit" name="" id="save" value="Сохранить">
                         </form>
                     </div>
                     <div class="tab__upload tab" id="upload">
@@ -30,18 +31,17 @@
                         </form>
                     </div>
                 </div>
+                <ul class="book-list">
+
+                </ul> 
             </aside>    
             <div class="output-interface">
                 <div class="output-interface__header">
-
+                    Открытая книга
                 </div>
                 <div class="output-interface__book book">
-                    <div class="book__name">
-                        <span></span>
-                    </div>
-                    <div class="book__content">
-
-                    </div>
+                    <div class="book__name"></div>
+                    <div class="book__content"></div>
                 </div>
             </div>
         </section>
