@@ -54,7 +54,7 @@ window.onload = function() {
     localStorage.setItem('bookName' , bookName.value);
     book__name.innerHTML = bookName.value;
   };
-  bookName = localStorage.getItem('bookName');
+  bookName.innerHTML = localStorage.getItem('bookName');
   book__name.innerHTML = localStorage.getItem('bookName');
 
   area.oninput = () => {
