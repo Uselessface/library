@@ -11,38 +11,38 @@ window.onload = function() {
       return false;
     };
   });
-}
-function _(selector) {
-	const arr = Array.from(document.querySelectorAll(selector));
-  return arr.length === 1 ? arr[0] : arr;
-}
 
-const url = 'https://apiinterns.osora.ru/';
+  function _(selector) {
+	  const arr = Array.from(document.querySelectorAll(selector));
+    return arr.length === 1 ? arr[0] : arr;
+  }
 
-const form = _('#form_upload');
+  const url = 'https://apiinterns.osora.ru/';
 
-form.onsubmit = function (u){
-    u.preventDefault();
-    const files = _('[type=file]').files;
-    const formData = new FormData();
+  const form = _('#form_upload');
 
-    for(let i = 0; i < files.length; i++) {
+  form.addEventListener('submit', (u) => {
+    u.preventDefault()
+
+    const files = document.querySelector('[type=file]').files
+    const formData = new FormData()
+
+    for (let i = 0; i < files.length; i++) {
       let file = files[i]
-
-      formData.append('login' , 'String')
-      formData.append('file' , file, 'binary')
+      
+      formData.append('login' , 'String');
+      formData.append('file', file);
+      
     }
 
-    fetch(url,{
+    fetch(url, {
       method: 'POST',
       body: formData,
-    }).then(response => response.json())
-    .then(data => {
-      console.log(data)
+    }).then((response) => {
+      console.log(response)
     })
-
-
+    console.log(formData.getAll)
+  })
 }
-
 
 
