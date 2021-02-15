@@ -45,14 +45,49 @@ window.onload = function() {
     
 
   }
-
   
-  class Book {
+  const bookName = _('#bookName');
+  const area = _('#area');
+  const book__name = _('.book__name');
+  const book__content = _('.book__content');
+  const ul = _('.book-list');
+  const saveBook = _('#save');
+  class book {
     constructor(title,content) {
       this.title = title;
       this.content = content;
     }
   }
+    
+  function addBook() {
+    const li = document.createElement('li');
+    const pName = document.createElement('p');
+    const pContent = document.createElement('p');
+    pContent.classList.add('tab')
+    pName.append(bookName.value);
+    pContent.append(area.value);
+
+    ul.appendChild(li).append(pName,pContent);
+
+    li.onclick = () =>{
+      book__name.innerHTML = localStorage.getItem('bookName');
+      book__content.innerHTML = localStorage.getItem('area');
+    }
+  };
+   saveBook.onclick = () => {
+    let newBook = new book;
+    addBook();
+  }
+
+  
+  
+
+
+}
+
+
+/*
+
 
   class UI {
     static displayBooks() {
@@ -106,6 +141,4 @@ window.onload = function() {
         UI.clearFields(); 
     } 
     document.addEventListener('DOMContentLoaded', UI.displayBooks);
-}
-           
-    
+ */   
